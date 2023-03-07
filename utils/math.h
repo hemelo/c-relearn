@@ -5,7 +5,7 @@
 #ifndef UNTITLED_MATH_H
 #define UNTITLED_MATH_H
 
-#include "../structures/dyn_array.h"
+#include "../structures/dyn_array/dyn_array.h"
 
 dynarray get_multiples_of(int number, int limit);
 

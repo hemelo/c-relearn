@@ -12,8 +12,9 @@ typedef struct node {
 } node, * tree;
 
 node * create_node(char *);
-node * add_sibling(node * n, char * data);
-void new_root(node ** root, node * new_root);
-void remove_node(node * n, node * new_root);
+node * add_sibling(node *, node *);
+node * add_child(node *, node *);
+void new_root(node **, node *);
+void remove_node(node *, node *);
 
 #endif //UNTITLED_N_ARY_TREE_H

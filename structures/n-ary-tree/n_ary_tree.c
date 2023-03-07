@@ -20,7 +20,7 @@ node * create_node(char * info) {
     return new_node;
 }
 
-node * add_sibling(node * n, char * data) {
+node * add_sibling(node * n, node * m) {
 
     if (n == NULL) return NULL;
 
@@ -28,21 +28,19 @@ node * add_sibling(node * n, char * data) {
         n = n->next;
     }
 
-    n->next = create_node(data);
-    return n->next;
+    return (n->next = m);
 }
 
-node * add_child(node * n, char * data) {
+node * add_child(node * n, node * m) {
 
     if (n == NULL) return NULL;
 
     if (n->child) {
-        node * m = add_sibling(n->child, data);
+        add_sibling(n->child, m);
         m->parent = n;
     } else {
-        n->child = create_node(data);
-        n->child->parent = n;
-        return n->child;
+        m->parent = n;
+        return (n->child = m);
     }
 }
 

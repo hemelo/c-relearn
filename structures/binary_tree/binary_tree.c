@@ -72,3 +72,27 @@ void delete(tree * t, tree * u) {
         *u = (*u)->left;
     }
 }
+
+int highest_key(tree t) {
+    int highest;
+    highest = t->info;
+
+    while (t != NULL) {
+        highest = t->info;
+        t = t->right;
+    }
+
+    return highest;
+}
+
+int lowest_key(tree t) {
+    int lowest;
+    lowest = t->info;
+
+    while (t != NULL) {
+        lowest = t->info;
+        t = t->left;
+    }
+
+    return lowest;
+}

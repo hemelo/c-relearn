@@ -18,5 +18,7 @@ void insert(tree *, int);
 void print(tree, int);
 int exclude(tree *, int);
 void delete(tree *, tree *);
+int highest_key(tree t);
+int lowest_key(tree t);
 
 #endif //UNTITLED_BINARY_TREE_H

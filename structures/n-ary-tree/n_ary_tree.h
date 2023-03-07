@@ -9,7 +9,6 @@
 typedef struct node {
     char * info;
     struct node * child, * next, * parent;
-    int depth, children;
 } node, * tree;
 
 node * create_node(char *);

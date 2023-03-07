@@ -96,3 +96,30 @@ int lowest_key(tree t) {
 
     return lowest;
 }
+
+void pre_order_traversal(tree t) {
+    if (t == NULL) return;
+
+    printf(" %d", t->info);
+    pre_order_traversal(t->left);
+    pre_order_traversal(t->right);
+    return;
+}
+
+void post_order_traversal(tree t) {
+    if (t == NULL) return;
+
+    post_order_traversal(t->left);
+    post_order_traversal(t->right);
+    printf(" %d", t->info);
+    return;
+}
+
+void order_traversal(tree t) {
+    if (t == NULL) return;
+
+    order_traversal(t->left);
+    printf(" %d", t->info);
+    order_traversal(t->right);
+    return;
+}

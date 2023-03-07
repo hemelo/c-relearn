@@ -20,5 +20,8 @@ int exclude(tree *, int);
 void delete(tree *, tree *);
 int highest_key(tree t);
 int lowest_key(tree t);
+void pre_order_traversal(tree t);
+void post_order_traversal(tree t);
+void order_traversal(tree t);
 
 #endif //UNTITLED_BINARY_TREE_H

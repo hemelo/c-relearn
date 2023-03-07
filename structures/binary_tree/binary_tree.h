@@ -16,7 +16,7 @@ tree root = NULL;
 tree search(tree, int);
 void insert(tree *, int);
 void print(tree, int);
-void remove(tree *, int);
-void delete(tree *);
+int exclude(tree *, int);
+void delete(tree *, tree *);
 
 #endif //UNTITLED_BINARY_TREE_H

@@ -19,5 +19,6 @@ void remove_node(node *, node *);
 int node_is_root(node * n);
 int node_total(node * n);
 void node_free(node * n);
+node * node_find(node *, void *, int (*)(void *, void *));
 
 #endif //UNTITLED_N_ARY_TREE_H

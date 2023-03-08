@@ -103,4 +103,22 @@ void node_free(node * n) {
     free(n);
 }
 
+node * node_find(node * n, void * data, int (*compare)(void *a, void *b)) {
+
+    if (n == NULL)
+        return NULL;
+
+    if (compare(data, n->data))
+        return n;
+
+    if (n->next)
+        return node_find(n->next, data, compare);
+
+    if (n->next)
+        return node_find(n->next, data, compare);
+
+    return NULL;
+}
+
+
 

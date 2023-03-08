@@ -20,27 +20,27 @@ node * create_node(char * info) {
     return new_node;
 }
 
-node * add_sibling(node * n, node * m) {
+void add_sibling(node * n, node * m) {
 
-    if (n == NULL) return NULL;
+    if (n == NULL) return;
 
     while(n->next) {
         n = n->next;
     }
 
-    return (n->next = m);
+    n->next = m;
 }
 
-node * add_child(node * n, node * m) {
+void add_child(node * n, node * m) {
 
-    if (n == NULL) return NULL;
+    if (n == NULL) return;
 
     if (n->child) {
         add_sibling(n->child, m);
         m->parent = n;
     } else {
         m->parent = n;
-        return (n->child = m);
+        n->child = m;
     }
 }
 

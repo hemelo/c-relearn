@@ -59,10 +59,10 @@ void new_root(node ** root, node * new_root) {
 
 void remove_node(node * n, node * new_root) {
 
-    if (n->next != NULL)
+    if (n->next)
         remove_node(n->next, new_root);
 
-    if (n->child != NULL && n->child != new_root)
+    if (n->child && n->child != new_root)
         remove_node(n->child, new_root);
 
     free(n);
@@ -73,5 +73,33 @@ int node_is_root(node * n) {
         return TRUE;
     else
         return FALSE;
+}
+
+int node_total(node * n) {
+
+    if (n == NULL) return 0;
+
+    int t = 1;
+
+    if (n->child)
+        t += node_total(n->child);
+
+    if (n->next)
+        t += node_total(n->next);
+
+    return t;
+}
+
+void node_free(node * n) {
+
+    if (n == NULL) return;
+
+    if (n->child)
+        node_free(n->child);
+
+    if (n->next)
+        node_free(n->next);
+
+    free(n);
 }
 

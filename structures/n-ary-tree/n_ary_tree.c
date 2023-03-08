@@ -8,7 +8,7 @@
 #include <stdlib.h>
 #include "n_ary_tree.h"
 
-node * create_node(char * info) {
+node * create_node(void * data) {
 
     node * new_node = malloc(sizeof(node));
 
@@ -16,7 +16,7 @@ node * create_node(char * info) {
         new_node->parent = NULL;
         new_node->next = NULL;
         new_node->child = NULL;
-        new_node->info = info;
+        new_node->data = data;
     }
 
     return new_node;
@@ -102,4 +102,5 @@ void node_free(node * n) {
 
     free(n);
 }
+
 

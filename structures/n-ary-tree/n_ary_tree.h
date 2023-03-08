@@ -7,11 +7,11 @@
 
 
 typedef struct node {
-    char * info;
+    void * data;
     struct node * child, * next, * parent;
 } node, * tree;
 
-node * create_node(char *);
+node * create_node(void *);
 void add_sibling(node *, node *);
 void add_child(node *, node *);
 void new_root(node **, node *);

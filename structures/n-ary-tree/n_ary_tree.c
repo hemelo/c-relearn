@@ -2,8 +2,10 @@
 // Created by henri on 07.03.2023.
 //
 
-#include <stdlib.h>
+#define TRUE 1
+#define FALSE 0
 
+#include <stdlib.h>
 #include "n_ary_tree.h"
 
 node * create_node(char * info) {
@@ -64,5 +66,12 @@ void remove_node(node * n, node * new_root) {
         remove_node(n->child, new_root);
 
     free(n);
+}
+
+int node_is_root(node * n) {
+    if (n->parent == NULL)
+        return TRUE;
+    else
+        return FALSE;
 }
 
